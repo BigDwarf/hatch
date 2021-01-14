@@ -1,20 +1,20 @@
-###Build:
+### Build:
 
 `make build`
 
 Binary will be build inside `$CWD/bin` folder
-###Run: 
+### Run: 
 
 ``hatch --help``
 
-###Run 2 json files comparison:
+### Run 2 json files comparison:
 
 ``hatch json --filePath1 <path> --filePath2 <path>``
 
 Each filepath defaults to `input1.json` and `input2.json` respectively
 
 
-####Decisions made:
+### Decisions made:
 * Not to unmarshal directly into struct, 
    rather use `map[string]interface` for the sake if speed
 * There are multiple solutions for this task:
