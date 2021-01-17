@@ -3,6 +3,10 @@
 `make build`
 
 Binary will be build inside `$CWD/bin` folder
+
+###Test
+`make test`
+
 ###Run: 
 
 ``hatch --help``
@@ -32,5 +36,8 @@ Each filepath defaults to `input1.json` and `input2.json` respectively
    To all the described complexities we should add up a complexity of organizing objects
    themselves(sorting inner arrays etc), but taking into account that this value is much lower than searching itself,
    it can be ignored.
-3. Work has been done under assumption that we know structure of each object and we're
-   able to write a function for converting from `map[string]interface{}` to object type
+   
+ 3. Idea was to sort all number/string/bool arrays first because we can define 
+    "greater than" function for that types. After this is done we can sort all non
+    primitive type arrays based on their hash (because we don't know what's inside), starting
+    from most inner arrays and moving up, otherwise object order will differ.
